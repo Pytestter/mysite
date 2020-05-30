@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>github用户网站</title>
+</head>
+<body>
+    {% extends 'base.html' %}
+    {% block content %}
+<!--    <h1>hello {{ user }}</h1>-->
+        {% if notfound %}
+            <h2>{{notfound}}</h2>
+        {% else %}
+            <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="{{username.avatar_url}}"  alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">{{username.name}}</h5>
+              <p class="card-text">location:{{username.location}}</p>
+              <p class="card-text">public_repos:{{username.public_repos}}</p>
+              <p class="card-text">public_gists:{{username.public_gists}}</p>
+              <p class="card-text">followers:{{username.followers}}</p>
+              <p class="card-text">folowing:{{username.folowing}}</p>
+              <p class="card-text">created_at:{{username.created_at}}</p>
+              <p class="card-text">update_at:{{username.update_at}}</p>
+              <a href="{{x.html_url}}" class="btn btn-primary">访问</a>
+             </div>
+          </div>
+        {% endif %}
+    {% endblock %}
+</body>
+</html>
